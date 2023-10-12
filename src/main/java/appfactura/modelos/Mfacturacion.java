@@ -30,6 +30,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 import org.tempuri.ArrayOfConceptoCFDI40;
 import org.tempuri.ArrayOfImpuestoTrasladado40;
@@ -61,6 +63,8 @@ import appfactura.interfaces.Ifacturacion;
 
 @Service
 public class Mfacturacion implements Ifacturacion{
+	@Autowired
+	Environment env;
 	
 	@Override
 	public Map<Integer, CFDIRequest40> getRequests(Fclientes fclientes, List<Ticket> tickets) {
@@ -217,8 +221,8 @@ public class Mfacturacion implements Ifacturacion{
 			if(requests.size() > 0) {
 				for (Integer tienda: requests.keySet()) {
 					CFDIRequest40 	request		= requests.get(tienda);
-									request.setUsuario("demo@tiendas3b.com");
-									request.setContrasena("12345");	
+									request.setUsuario(env.getProperty("digifact.usuario"));
+									request.setContrasena(env.getProperty("digifact.contrasena"));	
 					DigiFact 		df			= new DigiFact();
 					DigiFactSoap	port		= df.getDigiFactSoap();			
 					GeneraCFDIV40 	g 			= new GeneraCFDIV40();
