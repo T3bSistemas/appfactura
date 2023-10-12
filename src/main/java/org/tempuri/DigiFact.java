@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "DigiFact", targetNamespace = "http://tempuri.org/", wsdlLocation = "https://demo.sicofi.com.mx/SicofiWS33/Digifact.asmx?WSDL")
+@WebServiceClient(name = "DigiFact", targetNamespace = "http://tempuri.org/", wsdlLocation = "https://cfd.sicofi.com.mx/SicofiWS33/Digifact.asmx?WSDL")
 public class DigiFact
     extends Service
 {
@@ -30,7 +30,7 @@ public class DigiFact
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("https://demo.sicofi.com.mx/SicofiWS33/Digifact.asmx?WSDL");
+            url = new URL("https://cfd.sicofi.com.mx/SicofiWS33/Digifact.asmx?WSDL");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
