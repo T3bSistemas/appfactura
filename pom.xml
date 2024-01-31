@@ -15,7 +15,7 @@
 	<description>Servicios que consume PAC de facturacion T3B</description>
 	<properties>
 		<java.version>1.8</java.version>
-		<endpointwsdl>https://cfd.sicofi.com.mx/SicofiWS33/Digifact.asmx?WSDL</endpointwsdl>
+		<endpointwsdl>https://demo.sicofi.com.mx/SicofiWS33/Digifact.asmx?WSDL</endpointwsdl>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -69,7 +69,7 @@
 		        	<xdebug>true</xdebug>
 		        	<sourceDestDir>src/main/java</sourceDestDir>
 		        	<wsdlUrls>
-		        		<wsdlUrl>https://cfd.sicofi.com.mx/SicofiWS33/Digifact.asmx?WSDL</wsdlUrl>
+		        		<wsdlUrl>https://demo.sicofi.com.mx/SicofiWS33/Digifact.asmx?WSDL</wsdlUrl>
 		        	</wsdlUrls>
 		        </configuration>		        
 	       	</plugin>
