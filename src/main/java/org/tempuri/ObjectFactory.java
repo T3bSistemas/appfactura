@@ -78,19 +78,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GeneraCFDIDrve }
+     * Create an instance of {@link GeneraCFDIVPaseMasivo }
      * 
      */
-    public GeneraCFDIDrve createGeneraCFDIDrve() {
-        return new GeneraCFDIDrve();
+    public GeneraCFDIVPaseMasivo createGeneraCFDIVPaseMasivo() {
+        return new GeneraCFDIVPaseMasivo();
     }
 
     /**
-     * Create an instance of {@link GeneraCFDIDrveResponse }
+     * Create an instance of {@link GeneraCFDIVPaseMasivoResponse }
      * 
      */
-    public GeneraCFDIDrveResponse createGeneraCFDIDrveResponse() {
-        return new GeneraCFDIDrveResponse();
+    public GeneraCFDIVPaseMasivoResponse createGeneraCFDIVPaseMasivoResponse() {
+        return new GeneraCFDIVPaseMasivoResponse();
     }
 
     /**
@@ -219,6 +219,38 @@ public class ObjectFactory {
      */
     public CFDIComercioExteriorResponse40 createCFDIComercioExteriorResponse40() {
         return new CFDIComercioExteriorResponse40();
+    }
+
+    /**
+     * Create an instance of {@link GeneraCFDIComerioExterior20V40 }
+     * 
+     */
+    public GeneraCFDIComerioExterior20V40 createGeneraCFDIComerioExterior20V40() {
+        return new GeneraCFDIComerioExterior20V40();
+    }
+
+    /**
+     * Create an instance of {@link CFDIComercioExterior20Request }
+     * 
+     */
+    public CFDIComercioExterior20Request createCFDIComercioExterior20Request() {
+        return new CFDIComercioExterior20Request();
+    }
+
+    /**
+     * Create an instance of {@link GeneraCFDIComerioExterior20V40Response }
+     * 
+     */
+    public GeneraCFDIComerioExterior20V40Response createGeneraCFDIComerioExterior20V40Response() {
+        return new GeneraCFDIComerioExterior20V40Response();
+    }
+
+    /**
+     * Create an instance of {@link CFDIComercioExterior20Response }
+     * 
+     */
+    public CFDIComercioExterior20Response createCFDIComercioExterior20Response() {
+        return new CFDIComercioExterior20Response();
     }
 
     /**
@@ -2270,6 +2302,38 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link AlmacenaXMLPase }
+     * 
+     */
+    public AlmacenaXMLPase createAlmacenaXMLPase() {
+        return new AlmacenaXMLPase();
+    }
+
+    /**
+     * Create an instance of {@link PASERequest }
+     * 
+     */
+    public PASERequest createPASERequest() {
+        return new PASERequest();
+    }
+
+    /**
+     * Create an instance of {@link AlmacenaXMLPaseResponse }
+     * 
+     */
+    public AlmacenaXMLPaseResponse createAlmacenaXMLPaseResponse() {
+        return new AlmacenaXMLPaseResponse();
+    }
+
+    /**
+     * Create an instance of {@link PASEResponse }
+     * 
+     */
+    public PASEResponse createPASEResponse() {
+        return new PASEResponse();
+    }
+
+    /**
      * Create an instance of {@link GeneraCFDIComerioExterior11V33 }
      * 
      */
@@ -3054,6 +3118,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ArrayOfCFDISRelacionados }
+     * 
+     */
+    public ArrayOfCFDISRelacionados createArrayOfCFDISRelacionados() {
+        return new ArrayOfCFDISRelacionados();
+    }
+
+    /**
      * Create an instance of {@link ReceptorCFDI }
      * 
      */
@@ -3198,14 +3270,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CartaPorte30 }
-     * 
-     */
-    public CartaPorte30 createCartaPorte30() {
-        return new CartaPorte30();
-    }
-
-    /**
      * Create an instance of {@link ArrayOfCFDISRelacionados40 }
      * 
      */
@@ -3347,6 +3411,22 @@ public class ObjectFactory {
      */
     public ComplementosConcepto40 createComplementosConcepto40() {
         return new ComplementosConcepto40();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfFoliosBancario }
+     * 
+     */
+    public ArrayOfFoliosBancario createArrayOfFoliosBancario() {
+        return new ArrayOfFoliosBancario();
+    }
+
+    /**
+     * Create an instance of {@link FoliosBancario }
+     * 
+     */
+    public FoliosBancario createFoliosBancario() {
+        return new FoliosBancario();
     }
 
     /**
@@ -3715,6 +3795,206 @@ public class ObjectFactory {
      */
     public DescripcionEspecifica createDescripcionEspecifica() {
         return new DescripcionEspecifica();
+    }
+
+    /**
+     * Create an instance of {@link DatosComercioExterior20CFDI }
+     * 
+     */
+    public DatosComercioExterior20CFDI createDatosComercioExterior20CFDI() {
+        return new DatosComercioExterior20CFDI();
+    }
+
+    /**
+     * Create an instance of {@link ReceptorComercioExterior20 }
+     * 
+     */
+    public ReceptorComercioExterior20 createReceptorComercioExterior20() {
+        return new ReceptorComercioExterior20();
+    }
+
+    /**
+     * Create an instance of {@link ConceptosComercio20CFDI40 }
+     * 
+     */
+    public ConceptosComercio20CFDI40 createConceptosComercio20CFDI40() {
+        return new ConceptosComercio20CFDI40();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfConceptoComercio20CFDI40 }
+     * 
+     */
+    public ArrayOfConceptoComercio20CFDI40 createArrayOfConceptoComercio20CFDI40() {
+        return new ArrayOfConceptoComercio20CFDI40();
+    }
+
+    /**
+     * Create an instance of {@link ConceptoComercio20CFDI40 }
+     * 
+     */
+    public ConceptoComercio20CFDI40 createConceptoComercio20CFDI40() {
+        return new ConceptoComercio20CFDI40();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfImpuestoTrasladado20 }
+     * 
+     */
+    public ArrayOfImpuestoTrasladado20 createArrayOfImpuestoTrasladado20() {
+        return new ArrayOfImpuestoTrasladado20();
+    }
+
+    /**
+     * Create an instance of {@link ImpuestoTrasladado20 }
+     * 
+     */
+    public ImpuestoTrasladado20 createImpuestoTrasladado20() {
+        return new ImpuestoTrasladado20();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfImpuestoRetenido20 }
+     * 
+     */
+    public ArrayOfImpuestoRetenido20 createArrayOfImpuestoRetenido20() {
+        return new ArrayOfImpuestoRetenido20();
+    }
+
+    /**
+     * Create an instance of {@link ImpuestoRetenido20 }
+     * 
+     */
+    public ImpuestoRetenido20 createImpuestoRetenido20() {
+        return new ImpuestoRetenido20();
+    }
+
+    /**
+     * Create an instance of {@link ImpuestosComercio20 }
+     * 
+     */
+    public ImpuestosComercio20 createImpuestosComercio20() {
+        return new ImpuestosComercio20();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfImpuesto20 }
+     * 
+     */
+    public ArrayOfImpuesto20 createArrayOfImpuesto20() {
+        return new ArrayOfImpuesto20();
+    }
+
+    /**
+     * Create an instance of {@link Impuesto20 }
+     * 
+     */
+    public Impuesto20 createImpuesto20() {
+        return new Impuesto20();
+    }
+
+    /**
+     * Create an instance of {@link PropietarioComercioExterior20 }
+     * 
+     */
+    public PropietarioComercioExterior20 createPropietarioComercioExterior20() {
+        return new PropietarioComercioExterior20();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfPropietario20 }
+     * 
+     */
+    public ArrayOfPropietario20 createArrayOfPropietario20() {
+        return new ArrayOfPropietario20();
+    }
+
+    /**
+     * Create an instance of {@link Propietario20 }
+     * 
+     */
+    public Propietario20 createPropietario20() {
+        return new Propietario20();
+    }
+
+    /**
+     * Create an instance of {@link DestinatariosComercioExterior20 }
+     * 
+     */
+    public DestinatariosComercioExterior20 createDestinatariosComercioExterior20() {
+        return new DestinatariosComercioExterior20();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfDestinatario20 }
+     * 
+     */
+    public ArrayOfDestinatario20 createArrayOfDestinatario20() {
+        return new ArrayOfDestinatario20();
+    }
+
+    /**
+     * Create an instance of {@link Destinatario20 }
+     * 
+     */
+    public Destinatario20 createDestinatario20() {
+        return new Destinatario20();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfDomicilioDestinatario20 }
+     * 
+     */
+    public ArrayOfDomicilioDestinatario20 createArrayOfDomicilioDestinatario20() {
+        return new ArrayOfDomicilioDestinatario20();
+    }
+
+    /**
+     * Create an instance of {@link DomicilioDestinatario20 }
+     * 
+     */
+    public DomicilioDestinatario20 createDomicilioDestinatario20() {
+        return new DomicilioDestinatario20();
+    }
+
+    /**
+     * Create an instance of {@link MercanciasComercioExterior20 }
+     * 
+     */
+    public MercanciasComercioExterior20 createMercanciasComercioExterior20() {
+        return new MercanciasComercioExterior20();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfMercancia20 }
+     * 
+     */
+    public ArrayOfMercancia20 createArrayOfMercancia20() {
+        return new ArrayOfMercancia20();
+    }
+
+    /**
+     * Create an instance of {@link Mercancia20 }
+     * 
+     */
+    public Mercancia20 createMercancia20() {
+        return new Mercancia20();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfDescripcionEspecifica20 }
+     * 
+     */
+    public ArrayOfDescripcionEspecifica20 createArrayOfDescripcionEspecifica20() {
+        return new ArrayOfDescripcionEspecifica20();
+    }
+
+    /**
+     * Create an instance of {@link DescripcionEspecifica20 }
+     * 
+     */
+    public DescripcionEspecifica20 createDescripcionEspecifica20() {
+        return new DescripcionEspecifica20();
     }
 
     /**

@@ -189,6 +189,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="EquivalenciaDR10" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
  *         &lt;element name="Lanceta" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
  *         &lt;element name="MontoOrigenRecursoWS" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="TSJ" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -370,7 +371,8 @@ import javax.xml.bind.annotation.XmlType;
     "mesFinanzas",
     "equivalenciaDR10",
     "lanceta",
-    "montoOrigenRecursoWS"
+    "montoOrigenRecursoWS",
+    "tsj"
 })
 public class Opciones {
 
@@ -716,6 +718,8 @@ public class Opciones {
     protected boolean lanceta;
     @XmlElement(name = "MontoOrigenRecursoWS")
     protected boolean montoOrigenRecursoWS;
+    @XmlElement(name = "TSJ")
+    protected boolean tsj;
 
     /**
      * Obtiene el valor de la propiedad tickets.
@@ -3467,6 +3471,22 @@ public class Opciones {
      */
     public void setMontoOrigenRecursoWS(boolean value) {
         this.montoOrigenRecursoWS = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad tsj.
+     * 
+     */
+    public boolean isTSJ() {
+        return tsj;
+    }
+
+    /**
+     * Define el valor de la propiedad tsj.
+     * 
+     */
+    public void setTSJ(boolean value) {
+        this.tsj = value;
     }
 
 }

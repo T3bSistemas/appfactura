@@ -1,10 +1,7 @@
 
 package mx.gob.sat.cartaporte30;
 
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.XmlElementDecl;
 import javax.xml.bind.annotation.XmlRegistry;
-import javax.xml.namespace.QName;
 
 
 /**
@@ -24,9 +21,6 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _Ubicaciones_QNAME = new QName("http://www.sat.gob.mx/CartaPorte30", "Ubicaciones");
-    private final static QName _Mercancias_QNAME = new QName("http://www.sat.gob.mx/CartaPorte30", "Mercancias");
-    private final static QName _FiguraTransporte_QNAME = new QName("http://www.sat.gob.mx/CartaPorte30", "FiguraTransporte");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: mx.gob.sat.cartaporte30
@@ -36,27 +30,19 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link CartaPorte30 }
+     * 
+     */
+    public CartaPorte30 createCartaPorte30() {
+        return new CartaPorte30();
+    }
+
+    /**
      * Create an instance of {@link UbicacionesCartaPorte30 }
      * 
      */
     public UbicacionesCartaPorte30 createUbicacionesCartaPorte30() {
         return new UbicacionesCartaPorte30();
-    }
-
-    /**
-     * Create an instance of {@link MercanciasCartaPorte30 }
-     * 
-     */
-    public MercanciasCartaPorte30 createMercanciasCartaPorte30() {
-        return new MercanciasCartaPorte30();
-    }
-
-    /**
-     * Create an instance of {@link FiguraTransporteCartaPorte30 }
-     * 
-     */
-    public FiguraTransporteCartaPorte30 createFiguraTransporteCartaPorte30() {
-        return new FiguraTransporteCartaPorte30();
     }
 
     /**
@@ -76,19 +62,19 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link MercanciasCartaPorte30 }
+     * 
+     */
+    public MercanciasCartaPorte30 createMercanciasCartaPorte30() {
+        return new MercanciasCartaPorte30();
+    }
+
+    /**
      * Create an instance of {@link MercanciaCartaPorte30 }
      * 
      */
     public MercanciaCartaPorte30 createMercanciaCartaPorte30() {
         return new MercanciaCartaPorte30();
-    }
-
-    /**
-     * Create an instance of {@link PedimentosCartaPorte30 }
-     * 
-     */
-    public PedimentosCartaPorte30 createPedimentosCartaPorte30() {
-        return new PedimentosCartaPorte30();
     }
 
     /**
@@ -140,6 +126,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link RemolquesCartaPorte30 }
+     * 
+     */
+    public RemolquesCartaPorte30 createRemolquesCartaPorte30() {
+        return new RemolquesCartaPorte30();
+    }
+
+    /**
+     * Create an instance of {@link RemolqueCartaPorte30 }
+     * 
+     */
+    public RemolqueCartaPorte30 createRemolqueCartaPorte30() {
+        return new RemolqueCartaPorte30();
+    }
+
+    /**
      * Create an instance of {@link TransporteMaritimoCartaPorte30 }
      * 
      */
@@ -153,6 +155,22 @@ public class ObjectFactory {
      */
     public ContenedorCartaPorte30 createContenedorCartaPorte30() {
         return new ContenedorCartaPorte30();
+    }
+
+    /**
+     * Create an instance of {@link RemolquesCCPCartaPorte30 }
+     * 
+     */
+    public RemolquesCCPCartaPorte30 createRemolquesCCPCartaPorte30() {
+        return new RemolquesCCPCartaPorte30();
+    }
+
+    /**
+     * Create an instance of {@link RemolqueCCPCartaPorte30 }
+     * 
+     */
+    public RemolqueCCPCartaPorte30 createRemolqueCCPCartaPorte30() {
+        return new RemolqueCCPCartaPorte30();
     }
 
     /**
@@ -188,6 +206,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link FiguraTransporteCartaPorte30 }
+     * 
+     */
+    public FiguraTransporteCartaPorte30 createFiguraTransporteCartaPorte30() {
+        return new FiguraTransporteCartaPorte30();
+    }
+
+    /**
      * Create an instance of {@link TiposFiguraCartaPorte30 }
      * 
      */
@@ -201,45 +227,6 @@ public class ObjectFactory {
      */
     public PartesTransporteCartaPorte30 createPartesTransporteCartaPorte30() {
         return new PartesTransporteCartaPorte30();
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link UbicacionesCartaPorte30 }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link UbicacionesCartaPorte30 }{@code >}
-     */
-    @XmlElementDecl(namespace = "http://www.sat.gob.mx/CartaPorte30", name = "Ubicaciones")
-    public JAXBElement<UbicacionesCartaPorte30> createUbicaciones(UbicacionesCartaPorte30 value) {
-        return new JAXBElement<UbicacionesCartaPorte30>(_Ubicaciones_QNAME, UbicacionesCartaPorte30 .class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link MercanciasCartaPorte30 }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link MercanciasCartaPorte30 }{@code >}
-     */
-    @XmlElementDecl(namespace = "http://www.sat.gob.mx/CartaPorte30", name = "Mercancias")
-    public JAXBElement<MercanciasCartaPorte30> createMercancias(MercanciasCartaPorte30 value) {
-        return new JAXBElement<MercanciasCartaPorte30>(_Mercancias_QNAME, MercanciasCartaPorte30 .class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link FiguraTransporteCartaPorte30 }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link FiguraTransporteCartaPorte30 }{@code >}
-     */
-    @XmlElementDecl(namespace = "http://www.sat.gob.mx/CartaPorte30", name = "FiguraTransporte")
-    public JAXBElement<FiguraTransporteCartaPorte30> createFiguraTransporte(FiguraTransporteCartaPorte30 value) {
-        return new JAXBElement<FiguraTransporteCartaPorte30>(_FiguraTransporte_QNAME, FiguraTransporteCartaPorte30 .class, null, value);
     }
 
 }

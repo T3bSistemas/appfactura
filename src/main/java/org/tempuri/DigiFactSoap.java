@@ -76,11 +76,11 @@ public interface DigiFactSoap {
      * @return
      *     returns org.tempuri.CFDIResponse
      */
-    @WebMethod(operationName = "GeneraCFDIDrve", action = "http://tempuri.org/GeneraCFDIDrve")
-    @WebResult(name = "GeneraCFDIDrveResult", targetNamespace = "http://tempuri.org/")
-    @RequestWrapper(localName = "GeneraCFDIDrve", targetNamespace = "http://tempuri.org/", className = "org.tempuri.GeneraCFDIDrve")
-    @ResponseWrapper(localName = "GeneraCFDIDrveResponse", targetNamespace = "http://tempuri.org/", className = "org.tempuri.GeneraCFDIDrveResponse")
-    public CFDIResponse generaCFDIDrve(
+    @WebMethod(operationName = "GeneraCFDIVPaseMasivo", action = "http://tempuri.org/GeneraCFDIVPaseMasivo")
+    @WebResult(name = "GeneraCFDIVPaseMasivoResult", targetNamespace = "http://tempuri.org/")
+    @RequestWrapper(localName = "GeneraCFDIVPaseMasivo", targetNamespace = "http://tempuri.org/", className = "org.tempuri.GeneraCFDIVPaseMasivo")
+    @ResponseWrapper(localName = "GeneraCFDIVPaseMasivoResponse", targetNamespace = "http://tempuri.org/", className = "org.tempuri.GeneraCFDIVPaseMasivoResponse")
+    public CFDIResponse generaCFDIVPaseMasivo(
         @WebParam(name = "CFDIRequest", targetNamespace = "http://tempuri.org/")
         CFDIRequest cfdiRequest);
 
@@ -139,6 +139,20 @@ public interface DigiFactSoap {
     public CFDIComercioExteriorResponse40 generaCFDIComerioExterior11V40(
         @WebParam(name = "comerciorequest", targetNamespace = "http://tempuri.org/")
         CFDIComercioExteriorRequest33 comerciorequest);
+
+    /**
+     * 
+     * @param comerciorequest
+     * @return
+     *     returns org.tempuri.CFDIComercioExterior20Response
+     */
+    @WebMethod(operationName = "GeneraCFDIComerioExterior20V40", action = "http://tempuri.org/GeneraCFDIComerioExterior20V40")
+    @WebResult(name = "GeneraCFDIComerioExterior20V40Result", targetNamespace = "http://tempuri.org/")
+    @RequestWrapper(localName = "GeneraCFDIComerioExterior20V40", targetNamespace = "http://tempuri.org/", className = "org.tempuri.GeneraCFDIComerioExterior20V40")
+    @ResponseWrapper(localName = "GeneraCFDIComerioExterior20V40Response", targetNamespace = "http://tempuri.org/", className = "org.tempuri.GeneraCFDIComerioExterior20V40Response")
+    public CFDIComercioExterior20Response generaCFDIComerioExterior20V40(
+        @WebParam(name = "comerciorequest", targetNamespace = "http://tempuri.org/")
+        CFDIComercioExterior20Request comerciorequest);
 
     /**
      * 
@@ -1189,6 +1203,20 @@ public interface DigiFactSoap {
     public ReporteResponseBellota generaReporteBellota(
         @WebParam(name = "RequestBellota", targetNamespace = "http://tempuri.org/")
         ReporteRequestBellota requestBellota);
+
+    /**
+     * 
+     * @param paseRequest
+     * @return
+     *     returns org.tempuri.PASEResponse
+     */
+    @WebMethod(operationName = "AlmacenaXMLPase", action = "http://tempuri.org/AlmacenaXMLPase")
+    @WebResult(name = "AlmacenaXMLPaseResult", targetNamespace = "http://tempuri.org/")
+    @RequestWrapper(localName = "AlmacenaXMLPase", targetNamespace = "http://tempuri.org/", className = "org.tempuri.AlmacenaXMLPase")
+    @ResponseWrapper(localName = "AlmacenaXMLPaseResponse", targetNamespace = "http://tempuri.org/", className = "org.tempuri.AlmacenaXMLPaseResponse")
+    public PASEResponse almacenaXMLPase(
+        @WebParam(name = "PASERequest", targetNamespace = "http://tempuri.org/")
+        PASERequest paseRequest);
 
     /**
      * 

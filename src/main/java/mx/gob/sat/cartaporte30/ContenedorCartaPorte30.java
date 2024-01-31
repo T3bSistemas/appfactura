@@ -18,12 +18,12 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;attribute name="TipoContenedor" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
  *       &lt;attribute name="MatriculaContenedor" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="PesoContenedorVacio" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="PesoNetoMercancia" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
  *       &lt;attribute name="NumPrecinto" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
  *       &lt;attribute name="IdCCPRelacionado" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
  *       &lt;attribute name="PlacaVMCCP" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
  *       &lt;attribute name="FechaCertificacionCCP" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
- *       &lt;attribute name="PesoContenedorVacio" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
- *       &lt;attribute name="PesoNetoMercancia" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -39,6 +39,10 @@ public class ContenedorCartaPorte30 {
     protected String tipoContenedor;
     @XmlAttribute(name = "MatriculaContenedor")
     protected String matriculaContenedor;
+    @XmlAttribute(name = "PesoContenedorVacio")
+    protected String pesoContenedorVacio;
+    @XmlAttribute(name = "PesoNetoMercancia")
+    protected String pesoNetoMercancia;
     @XmlAttribute(name = "NumPrecinto")
     protected String numPrecinto;
     @XmlAttribute(name = "IdCCPRelacionado")
@@ -47,10 +51,6 @@ public class ContenedorCartaPorte30 {
     protected String placaVMCCP;
     @XmlAttribute(name = "FechaCertificacionCCP")
     protected String fechaCertificacionCCP;
-    @XmlAttribute(name = "PesoContenedorVacio")
-    protected String pesoContenedorVacio;
-    @XmlAttribute(name = "PesoNetoMercancia")
-    protected String pesoNetoMercancia;
 
     /**
      * Obtiene el valor de la propiedad tipoContenedor.
@@ -98,6 +98,54 @@ public class ContenedorCartaPorte30 {
      */
     public void setMatriculaContenedor(String value) {
         this.matriculaContenedor = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad pesoContenedorVacio.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getPesoContenedorVacio() {
+        return pesoContenedorVacio;
+    }
+
+    /**
+     * Define el valor de la propiedad pesoContenedorVacio.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setPesoContenedorVacio(String value) {
+        this.pesoContenedorVacio = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad pesoNetoMercancia.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getPesoNetoMercancia() {
+        return pesoNetoMercancia;
+    }
+
+    /**
+     * Define el valor de la propiedad pesoNetoMercancia.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setPesoNetoMercancia(String value) {
+        this.pesoNetoMercancia = value;
     }
 
     /**
@@ -194,54 +242,6 @@ public class ContenedorCartaPorte30 {
      */
     public void setFechaCertificacionCCP(String value) {
         this.fechaCertificacionCCP = value;
-    }
-
-    /**
-     * Obtiene el valor de la propiedad pesoContenedorVacio.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getPesoContenedorVacio() {
-        return pesoContenedorVacio;
-    }
-
-    /**
-     * Define el valor de la propiedad pesoContenedorVacio.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPesoContenedorVacio(String value) {
-        this.pesoContenedorVacio = value;
-    }
-
-    /**
-     * Obtiene el valor de la propiedad pesoNetoMercancia.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getPesoNetoMercancia() {
-        return pesoNetoMercancia;
-    }
-
-    /**
-     * Define el valor de la propiedad pesoNetoMercancia.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPesoNetoMercancia(String value) {
-        this.pesoNetoMercancia = value;
     }
 
 }

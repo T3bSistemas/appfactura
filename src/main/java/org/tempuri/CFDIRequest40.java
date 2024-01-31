@@ -26,6 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="ConceptosCFDI40" type="{http://tempuri.org/}ConceptosCFDI40" minOccurs="0"/&gt;
  *         &lt;element name="Addenda" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="Addenda2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="FoliosBancarios" type="{http://tempuri.org/}ArrayOfFoliosBancario" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -44,7 +45,8 @@ import javax.xml.bind.annotation.XmlType;
     "receptorCFDI40",
     "conceptosCFDI40",
     "addenda",
-    "addenda2"
+    "addenda2",
+    "foliosBancarios"
 })
 public class CFDIRequest40 {
 
@@ -66,6 +68,8 @@ public class CFDIRequest40 {
     protected String addenda;
     @XmlElement(name = "Addenda2")
     protected String addenda2;
+    @XmlElement(name = "FoliosBancarios")
+    protected ArrayOfFoliosBancario foliosBancarios;
 
     /**
      * Obtiene el valor de la propiedad usuario.
@@ -281,6 +285,30 @@ public class CFDIRequest40 {
      */
     public void setAddenda2(String value) {
         this.addenda2 = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad foliosBancarios.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ArrayOfFoliosBancario }
+     *     
+     */
+    public ArrayOfFoliosBancario getFoliosBancarios() {
+        return foliosBancarios;
+    }
+
+    /**
+     * Define el valor de la propiedad foliosBancarios.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ArrayOfFoliosBancario }
+     *     
+     */
+    public void setFoliosBancarios(ArrayOfFoliosBancario value) {
+        this.foliosBancarios = value;
     }
 
 }

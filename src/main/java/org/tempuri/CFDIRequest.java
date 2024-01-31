@@ -23,6 +23,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="DatosCFDI" type="{http://tempuri.org/}DatosCFDI" minOccurs="0"/&gt;
  *         &lt;element name="InformacionGlobal" type="{http://tempuri.org/}InformacionGlobal" minOccurs="0"/&gt;
  *         &lt;element name="CFDIRelacion" type="{http://tempuri.org/}CFDISRelacionados" minOccurs="0"/&gt;
+ *         &lt;element name="CFDISRelacion" type="{http://tempuri.org/}ArrayOfCFDISRelacionados" minOccurs="0"/&gt;
  *         &lt;element name="ReceptorCFDI" type="{http://tempuri.org/}ReceptorCFDI" minOccurs="0"/&gt;
  *         &lt;element name="ConceptosCFD" type="{http://tempuri.org/}ConceptosCFDI" minOccurs="0"/&gt;
  *         &lt;element name="Addenda" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
@@ -42,6 +43,7 @@ import javax.xml.bind.annotation.XmlType;
     "datosCFDI",
     "informacionGlobal",
     "cfdiRelacion",
+    "cfdisRelacion",
     "receptorCFDI",
     "conceptosCFD",
     "addenda"
@@ -60,6 +62,8 @@ public class CFDIRequest {
     protected InformacionGlobal informacionGlobal;
     @XmlElement(name = "CFDIRelacion")
     protected CFDISRelacionados cfdiRelacion;
+    @XmlElement(name = "CFDISRelacion")
+    protected ArrayOfCFDISRelacionados cfdisRelacion;
     @XmlElement(name = "ReceptorCFDI")
     protected ReceptorCFDI receptorCFDI;
     @XmlElement(name = "ConceptosCFD")
@@ -209,6 +213,30 @@ public class CFDIRequest {
      */
     public void setCFDIRelacion(CFDISRelacionados value) {
         this.cfdiRelacion = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad cfdisRelacion.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ArrayOfCFDISRelacionados }
+     *     
+     */
+    public ArrayOfCFDISRelacionados getCFDISRelacion() {
+        return cfdisRelacion;
+    }
+
+    /**
+     * Define el valor de la propiedad cfdisRelacion.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ArrayOfCFDISRelacionados }
+     *     
+     */
+    public void setCFDISRelacion(ArrayOfCFDISRelacionados value) {
+        this.cfdisRelacion = value;
     }
 
     /**

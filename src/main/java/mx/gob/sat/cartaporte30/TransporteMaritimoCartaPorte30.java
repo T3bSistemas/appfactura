@@ -21,6 +21,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="Contenedor" type="{http://www.sat.gob.mx/CartaPorte30}ContenedorCartaPorte30" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="RemolquesCCP" type="{http://www.sat.gob.mx/CartaPorte30}RemolquesCCPCartaPorte30" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *       &lt;attribute name="PermSCT" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
  *       &lt;attribute name="NumPermisoSCT" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
@@ -53,12 +54,15 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TransporteMaritimoCartaPorte30", propOrder = {
-    "contenedor"
+    "contenedor",
+    "remolquesCCP"
 })
 public class TransporteMaritimoCartaPorte30 {
 
     @XmlElement(name = "Contenedor")
     protected List<ContenedorCartaPorte30> contenedor;
+    @XmlElement(name = "RemolquesCCP")
+    protected RemolquesCCPCartaPorte30 remolquesCCP;
     @XmlAttribute(name = "PermSCT")
     protected String permSCT;
     @XmlAttribute(name = "NumPermisoSCT")
@@ -131,6 +135,30 @@ public class TransporteMaritimoCartaPorte30 {
             contenedor = new ArrayList<ContenedorCartaPorte30>();
         }
         return this.contenedor;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad remolquesCCP.
+     * 
+     * @return
+     *     possible object is
+     *     {@link RemolquesCCPCartaPorte30 }
+     *     
+     */
+    public RemolquesCCPCartaPorte30 getRemolquesCCP() {
+        return remolquesCCP;
+    }
+
+    /**
+     * Define el valor de la propiedad remolquesCCP.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link RemolquesCCPCartaPorte30 }
+     *     
+     */
+    public void setRemolquesCCP(RemolquesCCPCartaPorte30 value) {
+        this.remolquesCCP = value;
     }
 
     /**
