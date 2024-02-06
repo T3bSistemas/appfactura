@@ -233,7 +233,7 @@ public class Mfacturacion implements Ifacturacion{
 					GeneraCFDIV40 	g 			= new GeneraCFDIV40();
 									g.setCFDIRequest40(request);								
 		        	PDFCFDIRquest 	pdfRequest 	= new PDFCFDIRquest();
-		        	Marshaller marshallerObj;
+		        	/*Marshaller marshallerObj;
 		            try {
 		    			JAXBContext contextObj = JAXBContext.newInstance(GeneraCFDIV40.class);
 		    			marshallerObj = contextObj.createMarshaller();
@@ -244,7 +244,7 @@ public class Mfacturacion implements Ifacturacion{
 		    			marshallerObj.marshal(g, new FileOutputStream("C:\\Facturas\\prueba\\REQUEST.xml"));
 		    		} catch (JAXBException | FileNotFoundException e) {
 		    			System.out.println("Error al generar el request en disco");						
-		    		}
+		    		}*/
 		        	CFDIResponse40 	xml			= port.generaCFDIV40(request);  
 			        if(xml.isCFDICorrecto()) {
 			        	PDFCFDIResponse 		responsepdf = new PDFCFDIResponse();
