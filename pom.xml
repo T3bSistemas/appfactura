@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>appfactura</groupId>
-	<artifactId>t3b-facturacion-data-info</artifactId>
+	<artifactId>appfactura</artifactId>
 	<version>1.0.0</version>
 	<name>appfactura</name>
 	<description>Servicios que consume PAC de facturacion T3B</description>

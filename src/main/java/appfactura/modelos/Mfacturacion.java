@@ -117,7 +117,7 @@ public class Mfacturacion implements Ifacturacion{
 					}					
 				}
 				
-								
+						
 				for (TicketDetalle ticketDet : ticket.getDetalles()) {
 					ConceptoCFDI40 			conceptoCFDI 		= new ConceptoCFDI40();
 					ImpuestoTrasladado40	impuestoTrasladado	= new ImpuestoTrasladado40();
@@ -134,6 +134,7 @@ public class Mfacturacion implements Ifacturacion{
 		            Double monto 	= ticketDet.getAtmventa();
 		            Double cantidad = Double.parseDouble(ticketDet.getAtmacant().toString().trim());
 		            Double miSub 	= 0d;  
+		            
 		            Double iefactor = Double.parseDouble(ticketDet.getIEfactor());
 		            Double ivfactor = Double.parseDouble(ticketDet.getIVfactor());
 		            Double subIva   = (ivfactor > 0d || iefactor > 0d)?redondear(monto / (ivfactor + Double.parseDouble("1")),3):0d;

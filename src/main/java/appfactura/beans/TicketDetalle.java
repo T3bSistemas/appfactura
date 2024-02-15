@@ -160,4 +160,15 @@ public class TicketDetalle {
 		this.ivaMont = ivaMont;
 		
 	}
+	@Override
+	public String toString() {
+		return "{iclave:" + iclave + ", atmacant:" + atmacant + ", atmventa:" + atmventa + ", ivClave:"
+				+ ivClave + ", ieClave=" + ieClave + ", idesc=" + idesc + ", iunidad=" + iunidad + ", CClaveUnidad="
+				+ CClaveUnidad + ", CClaveProdServ:" + CClaveProdServ + ", IVfactor:" + IVfactor + ", IEfactor:"
+				+ IEfactor + ", Iva:" + Iva + ", Ieps:" + Ieps + ", valUnit:" + valUnit + ", subtotal:" + subtotal
+				+ ", iepsPrc:" + iepsPrc + ", iepsMont:" + iepsMont + ", ivaPrc:" + ivaPrc + ", ivaMont:" + ivaMont
+				+ "}";
+	}
+	
+	
 }

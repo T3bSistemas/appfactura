@@ -30,6 +30,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="RFCEMISOR" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="Fecha" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="FolioSustitucion" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="FiscalYear" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -52,7 +53,8 @@ import javax.xml.bind.annotation.XmlType;
     "companyBP",
     "rfcemisor",
     "fecha",
-    "folioSustitucion"
+    "folioSustitucion",
+    "fiscalYear"
 })
 public class CFDIv33CancelacionResponseBPSAP {
 
@@ -82,6 +84,8 @@ public class CFDIv33CancelacionResponseBPSAP {
     protected String fecha;
     @XmlElement(name = "FolioSustitucion")
     protected String folioSustitucion;
+    @XmlElement(name = "FiscalYear")
+    protected String fiscalYear;
 
     /**
      * Obtiene el valor de la propiedad acuseCancelacion.
@@ -385,6 +389,30 @@ public class CFDIv33CancelacionResponseBPSAP {
      */
     public void setFolioSustitucion(String value) {
         this.folioSustitucion = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad fiscalYear.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getFiscalYear() {
+        return fiscalYear;
+    }
+
+    /**
+     * Define el valor de la propiedad fiscalYear.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setFiscalYear(String value) {
+        this.fiscalYear = value;
     }
 
 }

@@ -1334,6 +1334,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GeneraPDFComplemento }
+     * 
+     */
+    public GeneraPDFComplemento createGeneraPDFComplemento() {
+        return new GeneraPDFComplemento();
+    }
+
+    /**
+     * Create an instance of {@link PDFCFDIRequestComplemento }
+     * 
+     */
+    public PDFCFDIRequestComplemento createPDFCFDIRequestComplemento() {
+        return new PDFCFDIRequestComplemento();
+    }
+
+    /**
+     * Create an instance of {@link GeneraPDFComplementoResponse }
+     * 
+     */
+    public GeneraPDFComplementoResponse createGeneraPDFComplementoResponse() {
+        return new GeneraPDFComplementoResponse();
+    }
+
+    /**
      * Create an instance of {@link GeneraPDFCFDIV33Summa }
      * 
      */

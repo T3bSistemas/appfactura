@@ -26,4 +26,10 @@ public class GenerarFactura {
 	public void setTickets(List<Ticket> tickets) {
 		this.tickets = tickets;
 	}
+	@Override
+	public String toString() {
+		return "{fclientes:" + fclientes + ", tickets:" + tickets + "}";
+	}
+	
+	
 }

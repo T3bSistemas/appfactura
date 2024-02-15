@@ -26,6 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="propietario" type="{http://tempuri.org/}PropietarioComercioExterior20" minOccurs="0"/&gt;
  *         &lt;element name="Destinatario" type="{http://tempuri.org/}DestinatariosComercioExterior20" minOccurs="0"/&gt;
  *         &lt;element name="Mercancias" type="{http://tempuri.org/}MercanciasComercioExterior20" minOccurs="0"/&gt;
+ *         &lt;element name="CFDIRelacion40" type="{http://tempuri.org/}ArrayOfCFDISRelacionados40" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -44,7 +45,8 @@ import javax.xml.bind.annotation.XmlType;
     "impuestos",
     "propietario",
     "destinatario",
-    "mercancias"
+    "mercancias",
+    "cfdiRelacion40"
 })
 public class CFDIComercioExterior20Request {
 
@@ -65,6 +67,8 @@ public class CFDIComercioExterior20Request {
     protected DestinatariosComercioExterior20 destinatario;
     @XmlElement(name = "Mercancias")
     protected MercanciasComercioExterior20 mercancias;
+    @XmlElement(name = "CFDIRelacion40")
+    protected ArrayOfCFDISRelacionados40 cfdiRelacion40;
 
     /**
      * Obtiene el valor de la propiedad usuario.
@@ -280,6 +284,30 @@ public class CFDIComercioExterior20Request {
      */
     public void setMercancias(MercanciasComercioExterior20 value) {
         this.mercancias = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad cfdiRelacion40.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ArrayOfCFDISRelacionados40 }
+     *     
+     */
+    public ArrayOfCFDISRelacionados40 getCFDIRelacion40() {
+        return cfdiRelacion40;
+    }
+
+    /**
+     * Define el valor de la propiedad cfdiRelacion40.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ArrayOfCFDISRelacionados40 }
+     *     
+     */
+    public void setCFDIRelacion40(ArrayOfCFDISRelacionados40 value) {
+        this.cfdiRelacion40 = value;
     }
 
 }

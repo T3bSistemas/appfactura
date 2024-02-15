@@ -217,5 +217,16 @@ public class Ticket {
 	public void setIeps(Double ieps) {
 		this.ieps = ieps;
 	}
+
+	@Override
+	public String toString() {
+		return "{fechaCompra:" + fechaCompra + ", tienda:" + tienda + ", ticket:" + ticket + ", caja:" + caja
+				+ ", total:" + total + ", region:" + region + ", tipoPago:" + tipoPago + ", Idturno:" + Idturno
+				+ ", tdir:" + tdir + ", tncrvendflag:" + tncrvendflag + ", temail:" + temail + ", claveSAT:" + claveSAT
+				+ ", detalles:" + detalles + ", folio:" + folio + ", uuid:" + uuid + ", pdf:" + pdf + ", xml:" + xml
+				+ ", subtotal:" + subtotal + ", iva:" + iva + ", ieps:" + ieps + "}";
+	}
+	
+	
 	
 }

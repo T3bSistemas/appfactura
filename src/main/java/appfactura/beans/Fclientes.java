@@ -84,5 +84,14 @@ public class Fclientes {
 
 	public void setDomicilio(Domicilio domicilio) {
 		this.domicilio = domicilio;
+	}
+
+
+	@Override
+	public String toString() {
+		return "{rfc:" + rfc + ", razonSocial:" + razonSocial + ", correo:" + correo + ", correo2:" + correo2
+				+ ", regimenFiscal:" + regimenFiscal + ", usoCFDI:" + usoCFDI + ", domicilio:" + domicilio + "}";
 	}	
+	
+	
 }

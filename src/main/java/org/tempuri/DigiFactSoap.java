@@ -694,6 +694,20 @@ public interface DigiFactSoap {
 
     /**
      * 
+     * @param pdfcfdiRequestComplemento
+     * @return
+     *     returns org.tempuri.PDFCFDIResponse
+     */
+    @WebMethod(operationName = "GeneraPDFComplemento", action = "http://tempuri.org/GeneraPDFComplemento")
+    @WebResult(name = "GeneraPDFComplementoResult", targetNamespace = "http://tempuri.org/")
+    @RequestWrapper(localName = "GeneraPDFComplemento", targetNamespace = "http://tempuri.org/", className = "org.tempuri.GeneraPDFComplemento")
+    @ResponseWrapper(localName = "GeneraPDFComplementoResponse", targetNamespace = "http://tempuri.org/", className = "org.tempuri.GeneraPDFComplementoResponse")
+    public PDFCFDIResponse generaPDFComplemento(
+        @WebParam(name = "PDFCFDIRequestComplemento", targetNamespace = "http://tempuri.org/")
+        PDFCFDIRequestComplemento pdfcfdiRequestComplemento);
+
+    /**
+     * 
      * @param pdfrequest
      * @return
      *     returns org.tempuri.PDFCFDIResponseSumma
