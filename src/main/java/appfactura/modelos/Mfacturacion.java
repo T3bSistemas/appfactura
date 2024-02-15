@@ -1,5 +1,7 @@
 package appfactura.modelos;
 
+//import java.io.FileNotFoundException;
+//import java.io.FileOutputStream;
 import java.io.StringReader;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -24,6 +26,9 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
+/*import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;*/
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
