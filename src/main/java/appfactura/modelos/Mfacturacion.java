@@ -87,10 +87,10 @@ public class Mfacturacion implements Ifacturacion{
 			        receptorCFDI.setNoCliente("");      
 			        receptorCFDI.setDomicilioFiscalReceptor(fclientes.getDomicilio().getCp());
 			        receptorCFDI.setRegimenFiscalReceptor(fclientes.getRegimenFiscal());
-			        receptorCFDI.setEmail((fclientes.getCorreo().equals(""))?
+			        receptorCFDI.setEmail2((fclientes.getCorreo2().equals(""))?
 			        				fclientes.getCorreo():
-			        				fclientes.getCorreo()+";"+fclientes.getCorreo());
-			        receptorCFDI.setEmail2(fclientes.getCorreo2());   
+			        				fclientes.getCorreo2());
+			        receptorCFDI.setEmail(fclientes.getCorreo());   
 			        
 			        datosCFDI.setSerie(ticket.getTncrvendflag());
 			        datosCFDI.setFolio(0);
