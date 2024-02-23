@@ -27,7 +27,7 @@ public class facturacion {
 	
 	@GetMapping({"/",""})
 	public String inicio() throws IOException, MessagingException{		 
-		return "Facturacion T3B V1";
+		return "Facturacion T3B V2";
 	}
 	
 	@PostMapping("/generarFactura")
