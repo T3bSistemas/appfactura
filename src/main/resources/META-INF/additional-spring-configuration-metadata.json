@@ -8,5 +8,55 @@
     "name": "digifact.contrasena",
     "type": "java.lang.String",
     "description": "A description for 'digifact.contrasena'"
+  },
+  {
+    "name": "digifact.moneda",
+    "type": "java.lang.String",
+    "description": "A description for 'digifact.moneda'"
+  },
+  {
+    "name": "digifact.tipodecomprobante",
+    "type": "java.lang.String",
+    "description": "A description for 'digifact.tipodecomprobante'"
+  },
+  {
+    "name": "digifact.metododepago",
+    "type": "java.lang.String",
+    "description": "A description for 'digifact.metododepago'"
+  },
+  {
+    "name": "digifact.condicionesdepago",
+    "type": "java.lang.String",
+    "description": "A description for 'digifact.condicionesdepago'"
+  },
+  {
+    "name": "digifact.exportacion",
+    "type": "java.lang.String",
+    "description": "A description for 'digifact.exportacion'"
+  },
+  {
+    "name": "digifact.objimp",
+    "type": "java.lang.String",
+    "description": "A description for 'digifact.objimp'"
+  },
+  {
+    "name": "digifact.impuesto",
+    "type": "java.lang.String",
+    "description": "A description for 'digifact.impuesto'"
+  },
+  {
+    "name": "digifact.version",
+    "type": "java.lang.String",
+    "description": "A description for 'digifact.version'"
+  },
+  {
+    "name": "digifact.tipofactor",
+    "type": "java.lang.String",
+    "description": "A description for 'digifact.tipofactor'"
+  },
+  {
+    "name": "digifact.impuesto2",
+    "type": "java.lang.String",
+    "description": "A description for 'digifact.impuesto2'"
   }
 ]}

@@ -1,5 +1,6 @@
 package appfactura.modelos;
 
+
 import java.io.StringReader;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -8,22 +9,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Properties;
 
-import javax.activation.DataHandler;
-import javax.activation.FileDataSource;
-import javax.mail.Address;
-import javax.mail.Authenticator;
-import javax.mail.BodyPart;
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeBodyPart;
-import javax.mail.internet.MimeMessage;
-import javax.mail.internet.MimeMultipart;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -87,9 +73,9 @@ public class Mfacturacion implements Ifacturacion{
 			        receptorCFDI.setNoCliente("");      
 			        receptorCFDI.setDomicilioFiscalReceptor(fclientes.getDomicilio().getCp());
 			        receptorCFDI.setRegimenFiscalReceptor(fclientes.getRegimenFiscal());
-			        receptorCFDI.setEmail2((fclientes.getCorreo2().equals(""))?
-			        				fclientes.getCorreo():
-			        				fclientes.getCorreo2());
+			        if(fclientes.getCorreo2() !=null && !fclientes.getCorreo2().equals("")) {
+			        	receptorCFDI.setEmail2(fclientes.getCorreo2());
+			        }			        
 			        receptorCFDI.setEmail(fclientes.getCorreo());   
 			        
 			        datosCFDI.setSerie(ticket.getTncrvendflag());
@@ -97,17 +83,17 @@ public class Mfacturacion implements Ifacturacion{
 			        datosCFDI.setFecha(parserDateXMLGregorianCalendar(dateToStringYMD(new Date())));        
 			        datosCFDI.setFormadePago(ticket.getClaveSAT());
 			        datosCFDI.setDescuento(0);
-			        datosCFDI.setMoneda("MXN");
+			        datosCFDI.setMoneda(env.getProperty("digifact.moneda"));
 			        datosCFDI.setTipoCambio(0);
-			        datosCFDI.setTipodeComprobante("FA");
-			        datosCFDI.setMetodoPago("PUE");
+			        datosCFDI.setTipodeComprobante(env.getProperty("digifact.tipodecomprobante"));
+			        datosCFDI.setMetodoPago(env.getProperty("digifact.metododepago"));
 			        if(ticket.getTdir().length() == 4) {
 			        	datosCFDI.setLugarDeExpedicion("0"+ticket.getTdir());
 			        } else {
 			        	datosCFDI.setLugarDeExpedicion(ticket.getTdir());
 			        }
-			        datosCFDI.setCondicionesDePago("PAGO AL CONTADO");        
-			        datosCFDI.setExportacion("01");
+			        datosCFDI.setCondicionesDePago(env.getProperty("digifact.condicionesdepago"));        
+			        datosCFDI.setExportacion(env.getProperty("digifact.exportacion"));
 			        
 					conceptosCFDI.setConceptos(new ArrayOfConceptoCFDI40());
 				}else{		
@@ -129,7 +115,7 @@ public class Mfacturacion implements Ifacturacion{
 		            conceptoCFDI.setClaveUnidad(ticketDet.getCClaveUnidad());
 		            conceptoCFDI.setUnidad(ticketDet.getIunidad());
 		            conceptoCFDI.setDescripcion(ticketDet.getIdesc());
-		            conceptoCFDI.setObjetoImp("02");
+		            conceptoCFDI.setObjetoImp(env.getProperty("digifact.objimp"));
 		            
 		            Double monto 	= ticketDet.getAtmventa();
 		            Double cantidad = Double.parseDouble(ticketDet.getAtmacant().toString().trim());
@@ -151,15 +137,15 @@ public class Mfacturacion implements Ifacturacion{
 					conceptoCFDI.setImporte(miSub);
 					
 					impuestoTrasladado.setBase(redondear((conceptoCFDI.getImporte()+iepVenta),3));
-		            impuestoTrasladado.setImpuesto("002");
-		            impuestoTrasladado.setTipoFactor("Tasa");
+		            impuestoTrasladado.setImpuesto(env.getProperty("digifact.impuesto"));
+		            impuestoTrasladado.setTipoFactor(env.getProperty("digifact.tipofactor"));
 		            impuestoTrasladado.setTasaOCuota(ivfactor);
 		            impuestoTrasladado.setImporte(redondear((impuestoTrasladado.getBase() * impuestoTrasladado.getTasaOCuota()),3));
 		            
 		            if(iefactor > 0d) {
 			        	impuestoTrasladado2.setBase(redondear(conceptoCFDI.getImporte(),3));
-			            impuestoTrasladado2.setImpuesto("003");
-			            impuestoTrasladado2.setTipoFactor("Tasa");
+			            impuestoTrasladado2.setImpuesto(env.getProperty("digifact.impuesto2"));
+			            impuestoTrasladado2.setTipoFactor(env.getProperty("digifact.tipofactor"));
 			            impuestoTrasladado2.setTasaOCuota(iefactor);
 			            impuestoTrasladado2.setImporte(redondear((impuestoTrasladado2.getBase() * impuestoTrasladado2.getTasaOCuota()),3));
 			        }
@@ -228,18 +214,6 @@ public class Mfacturacion implements Ifacturacion{
 					GeneraCFDIV40 	g 			= new GeneraCFDIV40();
 									g.setCFDIRequest40(request);								
 		        	PDFCFDIRquest 	pdfRequest 	= new PDFCFDIRquest();
-		        	/*Marshaller marshallerObj;
-		            try {
-		    			JAXBContext contextObj = JAXBContext.newInstance(GeneraCFDIV40.class);
-		    			marshallerObj = contextObj.createMarshaller();
-		    			marshallerObj.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-		    			
-		    			
-		    			g.setCFDIRequest40(request);
-		    			marshallerObj.marshal(g, new FileOutputStream("C:\\Facturas\\prueba\\REQUEST.xml"));
-		    		} catch (JAXBException | FileNotFoundException e) {
-		    			System.out.println("Error al generar el request en disco");						
-		    		}*/
 		        	CFDIResponse40 	xml			= port.generaCFDIV40(request);  
 			        if(xml.isCFDICorrecto()) {
 			        	PDFCFDIResponse 		responsepdf = new PDFCFDIResponse();
@@ -265,7 +239,7 @@ public class Mfacturacion implements Ifacturacion{
 			            pdfRequest.setTimbrado(false);
 			            pdfRequest.setUsuario(request.getUsuario());
 			            pdfRequest.setContrasena(request.getContrasena());
-			            pdfRequest.setVersion("4.0");			            
+			            pdfRequest.setVersion(env.getProperty("digifact.version"));			            
 			            responsepdf = generaPDFCFDIV40(pdfRequest);
 			            if (responsepdf.getErrorPDF().equals("")) {
 			                pdf = responsepdf.getPDF();
@@ -284,10 +258,10 @@ public class Mfacturacion implements Ifacturacion{
 											List<ImpuestoTrasladado40> impuestoTrasladado40 =consepto.getTraslados().getImpuestoTrasladado40();
 											for (ImpuestoTrasladado40 impuesto : impuestoTrasladado40) {
 												double impTick = redondear(impuesto.getBase()*impuesto.getTasaOCuota(),3);
-												if(impuesto.getImpuesto().equals("002")) {													
+												if(impuesto.getImpuesto().equals(env.getProperty("digifact.impuesto"))) {													
 													impTick=(ticket.getIva()== null)?impTick:ticket.getIva()+impTick;
 													ticket.setIva(redondear(impTick,3));
-												}else if(impuesto.getImpuesto().equals("003")) {
+												}else if(impuesto.getImpuesto().equals(env.getProperty("digifact.impuesto2"))) {
 													impTick=(ticket.getIeps() == null)?impTick:ticket.getIeps()+impTick;
 													ticket.setIeps(redondear(impTick,3));
 												}
@@ -344,87 +318,5 @@ public class Mfacturacion implements Ifacturacion{
         return port.generaPDFCFDIV33(pdfrequest);
     }
     
-    private static Session session;
-    
-    public void EnviarMail(String from, Address[] to, String mensaje, String titulo,String archivo) throws MessagingException{
-		
-        // Propiedades de la conexión
-        Properties props = new Properties();
-        props.setProperty("mail.smtp.host", "m.outlook.com");
-        props.setProperty("mail.smtp.starttls.enable", "true");
-        props.setProperty("mail.smtp.port", "587");
-        props.setProperty("mail.smtp.user", from);
-        props.setProperty("mail.smtp.auth", "true");    
-//        props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-//        props.put("mail.smtp.socketFactory.fallback", "false");
-//        props.setProperty("mail.smtp.ssl.trust", from.getHost());
-
-        // Preparamos la sesion
-//        Session session = Session.getDefaultInstance(props);
-        
-        session = Session.getInstance(props, new Authenticator() {
-            @Override
-            protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(from,"W67jD8h6");
-            }
-        });
-
-     // Se compone la parte del texto
-        BodyPart texto = new MimeBodyPart();
-        texto.setText(mensaje);
-     // Una MultiParte para agrupar texto e imagen.
-        MimeMultipart multiParte = new MimeMultipart();
-        
-        if(!archivo.isEmpty()) {
-	            // Se compone el adjunto con la imagen
-	            BodyPart adjunto = new MimeBodyPart();
-	
-	            adjunto.setDataHandler(
-	                    new DataHandler(new FileDataSource(archivo+".XML")));
-	            adjunto.setFileName(archivo+".XML");
-        
-	         // Se compone el adjunto con la imagen
-	            BodyPart adjunto2 = new MimeBodyPart();
-	            adjunto2.setDataHandler(
-	                    new DataHandler(new FileDataSource(archivo+".PDF")));
-	            adjunto2.setFileName(archivo+".PDF");
-	            
-	            multiParte.addBodyPart(adjunto);
-	        	multiParte.addBodyPart(adjunto2);
-        }
-
-        
-        multiParte.addBodyPart(texto);                  
-        
-        // Se compone el correo, dando to, from, subject y el
-        // contenido.
-        MimeMessage message = new MimeMessage(session);
-        message.setFrom(new InternetAddress(from));
-                    
-        message.addRecipients(Message.RecipientType.TO, to);
-        message.setSubject(titulo);
-        message.setContent(multiParte);
-
-        // Se envia el correo.
-        Transport t = session.getTransport("smtp");                  
-        
-        while(!t.isConnected()){
-            t.connect(from, "W67jD8h6");
-        }
-        if(t.isConnected()){
-            try{
-                t.sendMessage(message, message.getAllRecipients());
-                t.close();
-            }catch(Exception e){
-                while(!t.isConnected()){
-                    t.connect(from, "W67jD8h6");
-                } 
-                if(t.isConnected()){
-                    t.sendMessage(message, message.getAllRecipients());
-                    t.close();
-                }
-            }
-        }                        
-	}
 
 }

@@ -6,7 +6,6 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import mx.gob.sat.cartaporte20.Remolques;
 import mx.gob.sat.cartaporte20.Seguros;
 
 
@@ -22,7 +21,7 @@ import mx.gob.sat.cartaporte20.Seguros;
  *       &lt;sequence&gt;
  *         &lt;element name="IdentificacionVehicular" type="{http://www.sat.gob.mx/CartaPorte30}IdentificacionVehicularCartaPorte30" minOccurs="0"/&gt;
  *         &lt;element name="Seguros" type="{http://www.sat.gob.mx/CartaPorte20}Seguros" minOccurs="0"/&gt;
- *         &lt;element name="Remolques" type="{http://www.sat.gob.mx/CartaPorte20}Remolques" minOccurs="0"/&gt;
+ *         &lt;element name="Remolques" type="{http://www.sat.gob.mx/CartaPorte30}RemolquesCartaPorte30" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *       &lt;attribute name="PermSCT" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
  *       &lt;attribute name="NumPermisoSCT" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
@@ -46,7 +45,7 @@ public class AutotransporteCartaPorte30 {
     @XmlElement(name = "Seguros")
     protected Seguros seguros;
     @XmlElement(name = "Remolques")
-    protected Remolques remolques;
+    protected RemolquesCartaPorte30 remolques;
     @XmlAttribute(name = "PermSCT")
     protected String permSCT;
     @XmlAttribute(name = "NumPermisoSCT")
@@ -105,10 +104,10 @@ public class AutotransporteCartaPorte30 {
      * 
      * @return
      *     possible object is
-     *     {@link Remolques }
+     *     {@link RemolquesCartaPorte30 }
      *     
      */
-    public Remolques getRemolques() {
+    public RemolquesCartaPorte30 getRemolques() {
         return remolques;
     }
 
@@ -117,10 +116,10 @@ public class AutotransporteCartaPorte30 {
      * 
      * @param value
      *     allowed object is
-     *     {@link Remolques }
+     *     {@link RemolquesCartaPorte30 }
      *     
      */
-    public void setRemolques(Remolques value) {
+    public void setRemolques(RemolquesCartaPorte30 value) {
         this.remolques = value;
     }
 

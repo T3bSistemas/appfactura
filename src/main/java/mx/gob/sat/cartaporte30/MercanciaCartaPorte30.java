@@ -20,7 +20,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="Pedimentos" type="{http://www.sat.gob.mx/CartaPorte30}PedimentosCartaPorte30" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="GuiasIdentificacion" type="{http://www.sat.gob.mx/CartaPorte30}GuiasIdentificacionCartaPorte30" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="CantidadTransporta" type="{http://www.sat.gob.mx/CartaPorte30}CantidadTransportaCartaPorte30" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="DetalleMercancia" type="{http://www.sat.gob.mx/CartaPorte30}DetalleMercanciaCartaPorte30" minOccurs="0"/&gt;
@@ -73,7 +72,6 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "MercanciaCartaPorte30", propOrder = {
-    "pedimentos",
     "guiasIdentificacion",
     "cantidadTransporta",
     "detalleMercancia",
@@ -81,8 +79,6 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class MercanciaCartaPorte30 {
 
-    @XmlElement(name = "Pedimentos")
-    protected List<PedimentosCartaPorte30> pedimentos;
     @XmlElement(name = "GuiasIdentificacion")
     protected List<GuiasIdentificacionCartaPorte30> guiasIdentificacion;
     @XmlElement(name = "CantidadTransporta")
@@ -167,35 +163,6 @@ public class MercanciaCartaPorte30 {
     protected String tipoMateria;
     @XmlAttribute(name = "DescripcionMateria")
     protected String descripcionMateria;
-
-    /**
-     * Gets the value of the pedimentos property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pedimentos property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getPedimentos().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link PedimentosCartaPorte30 }
-     * 
-     * 
-     */
-    public List<PedimentosCartaPorte30> getPedimentos() {
-        if (pedimentos == null) {
-            pedimentos = new ArrayList<PedimentosCartaPorte30>();
-        }
-        return this.pedimentos;
-    }
 
     /**
      * Gets the value of the guiasIdentificacion property.

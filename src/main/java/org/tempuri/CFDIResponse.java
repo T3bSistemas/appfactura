@@ -33,6 +33,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="OfficeMaxURLXML" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="OfficeMaxURLPDF" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="OfficeMaxTransaccion" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="EstatusPublicacion" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -58,7 +59,8 @@ import javax.xml.bind.annotation.XmlType;
     "streetPriceBP",
     "officeMaxURLXML",
     "officeMaxURLPDF",
-    "officeMaxTransaccion"
+    "officeMaxTransaccion",
+    "estatusPublicacion"
 })
 public class CFDIResponse {
 
@@ -94,6 +96,8 @@ public class CFDIResponse {
     protected String officeMaxURLPDF;
     @XmlElement(name = "OfficeMaxTransaccion")
     protected String officeMaxTransaccion;
+    @XmlElement(name = "EstatusPublicacion")
+    protected boolean estatusPublicacion;
 
     /**
      * Obtiene el valor de la propiedad xmlcfdi.
@@ -469,6 +473,22 @@ public class CFDIResponse {
      */
     public void setOfficeMaxTransaccion(String value) {
         this.officeMaxTransaccion = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad estatusPublicacion.
+     * 
+     */
+    public boolean isEstatusPublicacion() {
+        return estatusPublicacion;
+    }
+
+    /**
+     * Define el valor de la propiedad estatusPublicacion.
+     * 
+     */
+    public void setEstatusPublicacion(boolean value) {
+        this.estatusPublicacion = value;
     }
 
 }
