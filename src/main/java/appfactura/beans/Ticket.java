@@ -31,6 +31,7 @@ public class Ticket {
 	private Double				subtotal;
 	private Double				iva;
 	private Double				ieps;
+	private String 				CodigoError;
 	
 	
 	
@@ -217,5 +218,14 @@ public class Ticket {
 	public void setIeps(Double ieps) {
 		this.ieps = ieps;
 	}
+
+	public String getCodigoError() {
+		return CodigoError;
+	}
+
+	public void setCodigoError(String codigoError) {
+		CodigoError = codigoError;
+	}
+		
 	
 }

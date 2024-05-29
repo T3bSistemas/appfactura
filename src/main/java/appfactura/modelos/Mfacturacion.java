@@ -275,6 +275,7 @@ public class Mfacturacion implements Ifacturacion{
 			        	for (Ticket ticket : tickets) {			        		
 							if((ticket.getTienda()+"").equals(tienda+"")) {
 								ticket.setXml(xml.getErrorCFDI()); 
+								ticket.setCodigoError(xml.getCodigoError());
 							}								
 						}			        	        
 			        }
